@@ -1,0 +1,15 @@
+h3{
+    text-align: center;
+    font-family: cursive;
+    margin-top: 8%;
+    color: orange;
+    font-size: 150%;
+}
+h4{
+    text-align: center;
+    font-family: monospace;
+    font-size: 150%;
+}
+body{
+    background-image: url("https://i.pinimg.com/originals/34/6d/cb/346dcbeab3393f0b05ccadf64d12ba24.jpg");
+}

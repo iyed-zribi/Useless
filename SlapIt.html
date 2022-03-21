@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Big PP</title>
+    <link rel="stylesheet" href="SlapIt.css">
+    <script>
+        function displayRandomImages() {
+            //array of images with image location, height, and width
+            var imageArray = [
+                {
+                    //address URL of the image
+                    src: "https://wi.wallpapertip.com/wsimgs/15-155208_desktop-puppy-wallpaper-hd.jpg",
+                    //size for the image to be display on webpage
+                    width: "280",
+                    height: "200"
+                },
+                {
+                    src: "https://wi.wallpapertip.com/wsimgs/156-1564365_golden-retriever-puppy-desktop-wallpaper-desktop-wallpaper-puppy.jpg",
+                    width: "320",
+                    height: "195"
+                },
+                {
+                    src: "https://wi.wallpapertip.com/wsimgs/156-1564140_free-puppy-wallpapers-for-computer-wallpaper-cave-cute.jpg",
+                    width: "320",
+                    height: "195"
+                },
+                {
+                    src: "https://wi.wallpapertip.com/wsimgs/156-1566650_cute-puppies-desktop-wallpaper-cute-puppies.jpg",
+                    width: "350",
+                    height: "250"
+                }];
+
+            //find the length of the array of images
+            var arrayLength = imageArray.length;
+            var newArray = [];
+            for (var i = 0; i < arrayLength; i++) {
+                newArray[i] = new Image();
+                newArray[i].src = imageArray[i].src;
+                newArray[i].width = imageArray[i].width;
+                newArray[i].height = imageArray[i].height;
+            }
+
+            // create random image number
+            function getRandomNum(min, max) {
+                // generate and return a random number for the image to be displayed 
+                imgNo = Math.floor(Math.random() * (max - min + 1)) + min;
+                return newArray[imgNo];
+            }
+
+            // 0 is first image and (preBuffer.length - 1) is last image of the array
+            var newImage = getRandomNum(0, newArray.length - 1);
+
+            // remove the previous images
+            var images = document.getElementsByTagName('img');
+            var l = images.length;
+            for (var p = 0; p < l; p++) {
+                images[0].parentNode.removeChild(images[0]);
+            }
+            // display the new random image  
+            document.body.appendChild(newImage);
+        }
+    </script>
+</head>
+
+<body
+    style="background-image: url('data:image/jpeg;base64,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');">
+    <div>
+        <center>
+            <h4 style="color:green"> Slap It </h4>
+            <h4 id="h4"> Slap that button to display and change the image </h4>
+            <button onclick="displayRandomImages();" id="slapbtn"> Slap It </button>
+        </center>
+    </div>
+</body>
+
+</html>
